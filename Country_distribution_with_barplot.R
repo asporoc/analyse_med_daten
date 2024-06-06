@@ -14,3 +14,4 @@ ggplot(country_counts, aes(x = Country, y = n)) +
        y = "Count") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
