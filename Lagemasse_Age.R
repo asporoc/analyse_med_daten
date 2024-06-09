@@ -1,2 +1,2 @@
 library(psych)
-print(describe(data$Age))
+describe(data$Age)
