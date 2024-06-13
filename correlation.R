@@ -20,4 +20,4 @@ print(correlation_matrix)
 
 correlations = corrplot(correlation_matrix, method = "circle")
 
-ggsave(file.path("plots", "correlation.png"), plot = correlation)
+ggsave(file.path("plots", "correlation.png"), plot = correlations)
