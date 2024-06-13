@@ -15,3 +15,8 @@ plot(x, y)
 y <- pnorm(x, mean_Age, sd_Age) 
 plot(x, y) 
 
+out <- data.matrix(data)
+
+
+
+

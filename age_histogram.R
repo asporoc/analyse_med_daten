@@ -12,4 +12,5 @@ age_histogram <- ggplot(df_ageGroups, aes(x=AgeGroup)) +
   labs(title="Histogramm der Altersgruppen", x="Altersgruppen", y="Häufigkeit") +
   theme_minimal()
 
+print(age_histogram)
 ggsave(file.path("plots", "age_histogram.png"), plot = age_histogram)
