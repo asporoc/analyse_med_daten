@@ -4,14 +4,20 @@ if (!require(corrplot)){
 
 library(corrplot)
 
-head(data)
+if (!require(dplyr)){
+  install.packages("dplyr")
+}
 
-numeric_data <- data %>% select_if(is.numeric)
+library(dplyr)
 
-correlation_matrix <- cor(numeric_data, use = "complete.obs")
+head(out)
+
+#numeric_data <- out[, sapply(out, is.numeric)]
+
+correlation_matrix <- cor(out, use = "complete.obs")
 
 print(correlation_matrix)
 
 correlations = corrplot(correlation_matrix, method = "circle")
 
-ggsave(file.path("plots", "correlation.png"), plot = cprrelation)
+ggsave(file.path("plots", "correlation.png"), plot = correlation)
