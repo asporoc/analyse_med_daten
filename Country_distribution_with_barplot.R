@@ -7,7 +7,7 @@ country_counts <- data %>%
 # Print the counts
 print(country_counts)
 
-ggplot(country_counts, aes(x = Country, y = n)) +
+country_distribution <- ggplot(country_counts, aes(x = Country, y = n)) +
   geom_bar(stat = "identity", fill = "skyblue") +
   labs(title = "Count of Occurrences by Country",
        x = "Country",
@@ -15,3 +15,4 @@ ggplot(country_counts, aes(x = Country, y = n)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+ggsave(file.path("plots", "country_distribution.png"), plot = age_boxplot)
