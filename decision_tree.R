@@ -26,5 +26,9 @@ test_data <- subset(out_data, sample_data == FALSE)
 
 model<- ctree(seek_help ~ ., train_data)
 plot(model)   # 3:yes, 1:Dont Know, 2: no
+<<<<<<< HEAD
 
+=======
+ #Vorhersage funktioniert nur noch nicht...
+>>>>>>> cb4160d5bd2b0011b85df7bbd319db95b12b4207
 

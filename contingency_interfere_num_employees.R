@@ -22,3 +22,4 @@ relative_contingency_table <- round(relative_contingency_table, 4)
 
 print("Kontingenztabelle (relative Häufigkeiten):")
 print(relative_contingency_table)
+
