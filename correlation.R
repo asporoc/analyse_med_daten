@@ -10,14 +10,23 @@ if (!require(dplyr)){
 
 library(dplyr)
 
-head(out)
+if (!require(ggplot2)) {
+  install.packages("ggplot2")
+}
 
-#numeric_data <- out[, sapply(out, is.numeric)]
+library(ggplot2)
 
-correlation_matrix <- cor(out, use = "complete.obs")
+out <- data.matrix(data)
+
+data_clean <- data[, !(names(data) %in% c("state", "Timestamp", "self_employed", "comments", "Country"))]
+source("recode.R")
+
+
+correlation_matrix <- cor(data_clean, use = "complete.obs")
 
 print(correlation_matrix)
 
-correlations = corrplot(correlation_matrix, method = "circle")
+correlations = corrplot(correlation_matrix, method = "shade")
 
 ggsave(file.path("plots", "correlation.png"), plot = correlations)
+
