@@ -1,3 +1,4 @@
+data_clean <- data[, !(names(data) %in% c("state", "Timestamp", "self_employed", "comments","Country"))]
 data_clean <- data_clean %>%
   mutate(
     Gender = recode(Gender, "female" = 0, "male" = 1, "other" = 2),
@@ -22,3 +23,4 @@ data_clean <- data_clean %>%
     mental_vs_physical = recode(mental_vs_physical, "No" = 0, "Don't know" = 1, "Yes" = 2),
     obs_consequence = recode(obs_consequence, "No" = 0, "Yes" = 1)
   )
+

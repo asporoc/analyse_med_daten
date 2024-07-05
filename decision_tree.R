@@ -11,7 +11,7 @@ library(party)
 library(dplyr)
 library(magrittr)
 
-new_data <- data %>% select_if(~ !any(is.na(.)))
+new_data <- data_clean %>% select_if(~ !any(is.na(.)))
 
 out_data <- data.matrix(new_data)
 out_data <- as.data.frame(out_data)

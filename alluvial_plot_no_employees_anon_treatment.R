@@ -6,6 +6,7 @@ library(ggplot2)
 library(ggalluvial)
 
 data$no_employees <- factor(data$no_employees, levels = c('1-5', '6-25', '26-100', '100-500', '500-1000', 'More than 1000'))
+
 # Create an alluvial plot
 ggplot(data, aes(axis1 = data$no_employees, axis2 = data$anonymity, axis3 = data$treatment)) +
   geom_alluvium(aes(fill = data$no_employees), width = 0.1) +
